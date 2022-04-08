@@ -32,3 +32,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
+  modern_data_architecture:
+    staging:
+      +unlogged: true
+      ecommerce:
+        tables:
+          +materialized: table
+        views:
+          +materialized: view
