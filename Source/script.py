@@ -11,8 +11,9 @@ engine = create_engine(f"postgresql://{os.getenv('DB_STRING')}")
 
 filenames = glob.glob('*.csv')
 for filename in filenames:
+    dataset_name = filename.split('_dataset')[0]
     dataset = pd.read_csv(filename)
     dataset.to_sql(
-        name=filename, con=engine, schema="public", if_exists="replace"
+        name=dataset_name, con=engine, schema="public", if_exists="replace"
     )
-    print(f'SUCCEED: {filename}')
+    print(f'SUCCEED: {filename} -> {dataset_name}')
