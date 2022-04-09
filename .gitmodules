@@ -1,0 +1,3 @@
+[submodule "Superset-Production-Environment"]
+	path = Superset-Production-Environment
+	url = https://github.com/mebaysan/Superset-Production-Environment.git
