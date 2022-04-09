@@ -1,4 +1,6 @@
-Welcome to your new dbt project!
+# Introduction
+
+In this project, [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) dataset is used.
 
 ### Using the starter project
 
