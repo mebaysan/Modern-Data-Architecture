@@ -3,7 +3,7 @@ with fct as (
     select 
         sr."customer_unique_id" , sr."segment", 
         sg."geolocation_lat", sg."geolocation_lng", sg."geolocation_city", sg."geolocation_state", 
-        so."order_id", 
+        so."order_id", date(so."order_purchase_timestamp") order_date,
         sp."payment_value", sp."payment_installments", sp."payment_type" 
     from {{ ref('stg_rfm') }} sr
     left join {{ ref('stg_customers') }} sc on sr."customer_unique_id" = sc."customer_unique_id"  
