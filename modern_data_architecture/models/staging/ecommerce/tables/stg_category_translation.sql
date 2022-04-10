@@ -1,1 +1,0 @@
-select * from {{ source('ecommerce','product_category_name_translation.csv') }}
