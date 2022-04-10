@@ -4,3 +4,6 @@
 [submodule "airbyte"]
 	path = airbyte
 	url = https://github.com/airbytehq/airbyte.git
+[submodule "Modern-Data-Architecture-DBT"]
+	path = Modern-Data-Architecture-DBT
+	url = https://github.com/mebaysan/Modern-Data-Architecture-DBT.git
