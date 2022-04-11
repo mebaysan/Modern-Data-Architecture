@@ -1,6 +1,6 @@
 # Introduction
 
-I created this repo to simulate modern data architecture by using the tools below.
+I created this repo to simulate modern data architecture by using the tools below. Also, [I have written about this topic on Medium](https://mebaysan.medium.com/introduction-to-modern-data-architecture-1236272dd5d5).
 
 ![Image by Author](./assets/introduction-to-modern-data-architecture.png)
 
