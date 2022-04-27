@@ -2,6 +2,12 @@
 
 I created this repo to simulate modern data architecture by using the tools below. Also, [I have written about this topic on Medium](https://mebaysan.medium.com/introduction-to-modern-data-architecture-1236272dd5d5). [There is a repo I have created to follow the official DBT training programs](https://github.com/mebaysan/DBT-Training).
 
+If you want to clone this repo with the its submodules, you should execute the command below.
+
+```bash
+git clone --recurse-submodules https://github.com/mebaysan/Modern-Data-Architecture.git
+```
+
 ![Image by Author](./assets/introduction-to-modern-data-architecture.png)
 
 # [Airbyte](https://airbyte.com/)
