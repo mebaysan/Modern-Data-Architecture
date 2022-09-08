@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres
+    container_name: dwh-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    networks:
+      - dwh-network
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Passw0rd!.
+  
+  dbms:
+  # you can use `docker inspect <db_container_ID> | grep IPAddress` to register the db to the dbms service in PgAdmin console
+  # or you can set `host.docker.internal` for connection host on pgAdmin
+    image: dpage/pgadmin4
+    container_name: dwh-dbms
+    restart: unless-stopped
+    ports:
+      - "5435:5435"
+    networks:
+      - dwh-network
+      - nginx_network
+    environment:
+      - PGADMIN_LISTEN_PORT=5435
+      - PGADMIN_DEFAULT_PASSWORD=Passw0rd!.
+      - PGADMIN_DEFAULT_EMAIL=info@baysansoft.com
+  
+
+  nginx:
+    container_name: baysan_nginx
+    # location of the dockerfile that defines the nginx image. The dockerfile will be used to spin up an image during the build stage.
+    build: ./nginx
+    # map the machine port 81 to the container port 80. Any traffic from 81 externally will be passed to port 80 of the NGINX container. You can access this container viea localhost:81
+    ports:
+      - "81:80"
+    # will only start if web is up and running
+    depends_on:
+      - dbms
+    # restart service when it fails
+    restart: "on-failure"
+    networks:
+      - nginx_network
+
+volumes:
+  db_volume:
+
+networks:
+  nginx_network:
+    driver: bridge
+  dwh-network:
+    driver: bridge

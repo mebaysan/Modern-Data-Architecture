@@ -33,6 +33,8 @@ git clone --recurse-submodules https://github.com/mebaysan/Modern-Data-Architect
 
 This is a docker compose file to easily run Postgres & pgAdmin
 
+Also there is a file to easily deploy pgAdmin on real servers: [docker-compose-nginx.yml](./Postgres-DWH/docker-compose-nginx.yml)
+
 
 # How to utilize this repo?
 
