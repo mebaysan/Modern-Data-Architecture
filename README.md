@@ -29,6 +29,10 @@ git clone --recurse-submodules https://github.com/mebaysan/Modern-Data-Architect
 - Also, you should add more `RUN pip install <package>` in [Dockerfile](./Superset-Production-Environment/Dockerfile) to install database connectors if you want to use other databases.
 - Your Superset database credentials *should be* different than [dbt project](./Modern-Data-Architecture-DBT/)'s output database.
 
+# [Postgres-DWH](./Postgres-DWH/docker-compose.yml)
+
+This is a docker compose file to easily run Postgres & pgAdmin
+
 
 # How to utilize this repo?
 
